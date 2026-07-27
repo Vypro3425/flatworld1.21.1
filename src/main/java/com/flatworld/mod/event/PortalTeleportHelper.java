@@ -127,7 +127,15 @@ public final class PortalTeleportHelper {
                         continue;
                     }
                     mutable.set(center.getX() + dx, searchY, center.getZ() + dz);
-                    if (level.getBlockState(mutable).is(ModBlocks.FLAT_PORTAL.get()) && level.isLoaded(mutable)) {
+                    // Check isLoaded() FIRST: calling getBlockState() on an unloaded chunk forces
+                    // the server to synchronously generate that chunk. Scanning a wide radius
+                    // this way generates hundreds of chunks on the main thread in one tick and
+                    // freezes the client on the "Loading terrain" screen. Skipping unloaded
+                    // columns keeps this search free.
+                    if (!level.isLoaded(mutable)) {
+                        continue;
+                    }
+                    if (level.getBlockState(mutable).is(ModBlocks.FLAT_PORTAL.get())) {
                         return Optional.of(mutable.immutable());
                     }
                 }

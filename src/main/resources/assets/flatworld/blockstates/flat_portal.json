@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=x": { "model": "flatworld:block/flat_portal_ns" },
+    "axis=z": { "model": "flatworld:block/flat_portal_ew" }
+  }
+}

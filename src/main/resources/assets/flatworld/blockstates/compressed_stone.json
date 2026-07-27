@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "flatworld:block/compressed_stone" }
+  }
+}

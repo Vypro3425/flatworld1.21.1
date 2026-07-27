@@ -10,7 +10,10 @@
     "grass_color": 8437619,
     "foliage_color": 6975545
   },
-  "carvers": [],
+  "carvers": {
+    "air": [],
+    "liquid": []
+  },
   "features": [
     [],
     [],

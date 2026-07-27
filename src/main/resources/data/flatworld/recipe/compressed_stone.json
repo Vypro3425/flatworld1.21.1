@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "C": "minecraft:cobblestone"
+    "C": {
+      "item": "minecraft:cobblestone"
+    }
   },
   "pattern": [
     "CCC",
@@ -10,7 +12,7 @@
     "CCC"
   ],
   "result": {
-    "id": "flatworld:compressed_stone",
+    "item": "flatworld:compressed_stone",
     "count": 1
   }
 }

@@ -1,6 +1,7 @@
 package com.flatworld.mod.dimension;
 
 import com.flatworld.mod.FlatWorldMod;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
@@ -17,12 +18,12 @@ import net.minecraft.world.level.dimension.DimensionType;
 public class ModDimensions {
 
     public static final ResourceKey<Level> FLAT_WORLD_LEVEL = ResourceKey.create(
-            Level.RESOURCE_KEY,
+            Registries.DIMENSION,
             ResourceLocation.fromNamespaceAndPath(FlatWorldMod.MOD_ID, "flat_world")
     );
 
     public static final ResourceKey<DimensionType> FLAT_WORLD_TYPE = ResourceKey.create(
-            net.minecraft.core.registries.Registries.DIMENSION_TYPE,
+            Registries.DIMENSION_TYPE,
             ResourceLocation.fromNamespaceAndPath(FlatWorldMod.MOD_ID, "flat_world_type")
     );
 }
